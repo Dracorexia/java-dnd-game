@@ -181,14 +181,24 @@ public class gameDND{
          playerweapon ="Dagger";
          weaponName.setText(playerweapon);
          HP.setText(""+playerhp);
-         mayorHouse();
+         startScreen();
          
+     }
+
+     public void startScreen(){
+        playerPosition ="startScreen";
+         mainTextArea.setText(
+        "You arrive at the great city of Emon. You are invited to meet the mayor of the city Lord Uriel");
+        choiceButton1.setText("Visit Lord Uriel");
+        choiceButton2.setText("");
+        choiceButton3.setText("");
+        choiceButton4.setText(""); 
      }
 
      public void mayorHouse(){
          playerPosition ="mayorHouse";
          mainTextArea.setText(
-        "Lord ThunderBrand: \n Welcome Traveller to my beautiful city.\n I have a quest for you. \n Are you ready for it?");
+        "Lord Uriel: \n Welcome Adventurer.\n I have a quest for you. \n Are you upto  it?");
         choiceButton1.setText("Accept Quest");
         choiceButton2.setText("Decline Quest");
         choiceButton3.setText("");
@@ -196,14 +206,156 @@ public class gameDND{
      }
 
      public void acceptQuest(){
-         playerPosition ="acceptQuest";
-         mainTextArea.setText("Thats the spirit!");
-         choiceButton1.setText("Continue");
-         choiceButton2.setText("");
-         choiceButton3.setText("");
-        choiceButton4.setText("");
+        playerPosition ="acceptQuest";
+        mainTextArea.setText("Lord Uriel: Thats the spirit!");
+        choiceButton1.setText("Continue");
+        choiceButton2.setText("");
+        choiceButton3.setText("");
+       choiceButton4.setText("");
 
-     }
+    }
+    public void declineQuest(){
+        playerPosition="declineQuest";
+        mainTextArea.setText(
+        "Lord Uriel:I thought better of you");
+        choiceButton1.setText("Accept");
+        choiceButton2.setText("");
+        choiceButton3.setText("");
+        choiceButton4.setText("");
+    }
+    public void continueQuest(){
+        playerPosition="continueQuest";
+        mainTextArea.setText(
+        "Lord Uriel:You are to retrieve a precious artifact for me. \n 'The necklace of thousand moons' found only in \n Shademirk Bog." );
+        choiceButton1.setText("continue");
+        choiceButton2.setText("");
+        choiceButton3.setText("");
+        choiceButton4.setText("");
+    }
+    public void continue1Quest(){
+       playerPosition="continue1Quest";
+       mainTextArea.setText(
+       "Lord Uriel:You will face many challenges but I'm sure you will \nemerge successful. \nSafe travel's adventurer!" );
+       choiceButton1.setText("Travel to Shademirk Bog");
+       choiceButton2.setText("");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+    }
+    public void continue2Quest(){
+       playerPosition="continue2Quest";
+       mainTextArea.setText(
+       "You arrive at Shademirk Bog.\nThe road diverges in front of you. \nWhat do you do?" );
+       choiceButton1.setText("Go Left");
+       choiceButton2.setText("Go Right");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+    }
+    public void leftQuest(){
+       playerPosition="leftQuest";
+       mainTextArea.setText(
+       "You found a healing potion. \nWhat do you do?" );
+       choiceButton1.setText("Drink potion and Go");
+       choiceButton2.setText("Run away");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+    }
+    public void DrinkQuest(){
+       playerPosition="DrinkQuest";
+       mainTextArea.setText(
+       "Oh no! You encountered a Goblin. \nWhat do you do?" );
+       choiceButton1.setText("Attack");
+       choiceButton2.setText("Run away");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+    }
+    public void RunQuest(){
+       playerPosition="RunQuest";
+       mainTextArea.setText(
+       "Lord Uriel: I thought you were braver. You ran away! \n                           QUEST FAILED!          ");
+       choiceButton1.setText("Try Again");
+       choiceButton2.setText("");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+    }
+    public void RightQuest(){
+       playerPosition="RightQuest";
+       mainTextArea.setText(
+       "Oh no! You encountered a Goblin. \nWhat do you do?" );
+       choiceButton1.setText("Attack");
+       choiceButton2.setText("Run away");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+    }
+   
+    public void AttackQuest(){
+       playerPosition="AttackQuest";
+       mainTextArea.setText(
+       "The Goblin dropped the necklace of thousand moons." );
+       choiceButton1.setText("Pick it up");
+       choiceButton2.setText("Pick and search cave");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+    }
+    public void PickQuest(){
+       playerPosition="PickQuest";
+       mainTextArea.setText(
+       "You found the artifact!" );
+       choiceButton1.setText("Go back to Emon");
+       choiceButton2.setText("");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+    }
+    public void searchQuest(){
+       playerPosition="searchQuest";
+       mainTextArea.setText(
+       "You found a great Sword!" );
+       choiceButton1.setText("Equip");
+       choiceButton2.setText("");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+    }
+    public void equipQuest(){
+     playerPosition="equipQuest";
+     mainTextArea.setText(
+     "You found the artifact!" );
+     choiceButton1.setText("Go back to Emon");
+     choiceButton2.setText("");
+     choiceButton3.setText("");
+     choiceButton4.setText("");
+  }
+    public void backQuest(){
+       playerPosition="backQuest";
+       mainTextArea.setText(
+       "Lord Uriel: Welcome back adventurer! \nI see you found the necklace. I knew I could trust you. \nExcellent job!" );
+       choiceButton1.setText("End Game");
+       choiceButton2.setText("");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+    }
+    public void restartGame(){
+        playerPosition="restartGame";
+       mainTextArea.setText(
+       "You will start from Shademirk Bog.Do you want to try again?" );
+       choiceButton1.setText("Yes");
+       choiceButton2.setText("");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+
+    }
+
+    public void endGame(){
+        playerPosition="endGame";
+       mainTextArea.setText(
+       "QUEST COMPLETED" );
+       choiceButton1.setText("");
+       choiceButton1.setEnabled(false);
+       choiceButton2.setEnabled(false);
+       choiceButton3.setEnabled(false);
+       choiceButton4.setEnabled(false);
+
+
+    }
+
 
      // idhar se start adding methods
      //dont forget to add playerposition to each method
@@ -234,13 +386,143 @@ public class gameDND{
 
             switch(playerPosition)
             {
-                case "mayorHouse":
-                 switch(yourChoice){
-                     case "c1": acceptQuest(); break;
-                     case "c2": mayorHouse(); break;
-                     case "c3": break;
-                     case "c4": break;
-                 }
+                case "startScreen":
+                
+                switch(yourChoice){
+                    case "c1": mayorHouse(); break;
+                    case "c2":  break;
+                    case "c3": break;
+                    case "c4": break;   
+            }
+            break;
+            case "mayorHouse":
+             switch(yourChoice){
+                 case "c1": acceptQuest(); break;
+                 case "c2": declineQuest(); break;
+                 case "c3": break;
+                 case "c4": break;
+             }
+             break;
+             case "declineQuest":
+             switch(yourChoice){
+                case "c1": acceptQuest(); break;
+                case "c2": break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+             case "acceptQuest":
+             switch(yourChoice){
+                case "c1": continueQuest(); break;
+                case "c2": break;
+                case "c3": break;
+                case "c4": break;
+
+            }
+            break;
+            case "continueQuest":
+             switch(yourChoice){
+                case "c1": continue1Quest(); break;
+                case "c2": break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+            case "continue1Quest":
+             switch(yourChoice){
+                case "c1": continue2Quest(); break;
+                case "c2": break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+            case "continue2Quest":
+             switch(yourChoice){
+                case "c1": leftQuest(); break;
+                case "c2": RightQuest(); break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+            case "leftQuest":
+             switch(yourChoice){
+                case "c1": DrinkQuest(); break;
+                case "c2": RunQuest(); break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+            case "DrinkQuest":
+             switch(yourChoice){
+                case "c1": AttackQuest(); break;
+                case "c2": RunQuest(); break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+             case "RunQuest":
+             switch(yourChoice){
+                case "c1": restartGame(); break;
+                case "c2": break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+            case "RightQuest":
+             switch(yourChoice){
+                case "c1": AttackQuest(); break;
+                case "c2": RunQuest(); break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+            case "AttackQuest":
+             switch(yourChoice){
+                case "c1": PickQuest(); break;
+                case "c2": searchQuest(); break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+             case "PickQuest":
+             switch(yourChoice){
+                case "c1": backQuest(); break;
+                case "c2": searchQuest(); break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+             case "searchQuest":
+             switch(yourChoice){
+                case "c1": equipQuest(); break;
+                case "c2": backQuest(); break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+             case "equipQuest":
+             switch(yourChoice){
+                case "c1": backQuest(); break;
+                case "c2": break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+             case "restartGame":
+             switch(yourChoice){
+                case "c1": continue2Quest(); break;
+                case "c2": break;
+                case "c3": break;
+                case "c4": break;
+             }
+             break;
+             case "backQuest":
+             switch(yourChoice){
+                case "c1": endGame(); break;
+                case "c2": break;
+                case "c3": break;
+                case "c4": break;
+             }
 
             }
 
