@@ -184,7 +184,6 @@ public class gameDND{
          startScreen();
          
      }
-
      public void startScreen(){
         playerPosition ="startScreen";
          mainTextArea.setText(
@@ -388,141 +387,143 @@ public class gameDND{
             {
                 case "startScreen":
                 
-                switch(yourChoice){
-                    case "c1": mayorHouse(); break;
-                    case "c2":  break;
+                    switch(yourChoice){
+                        case "c1": mayorHouse(); break;
+                        case "c2":  break;
+                        case "c3": break;
+                        case "c4": break;   
+                }
+                break;
+                case "mayorHouse":
+                 switch(yourChoice){
+                     case "c1": acceptQuest(); break;
+                     case "c2": declineQuest(); break;
+                     case "c3": break;
+                     case "c4": break;
+                 }
+                 break;
+                 case "declineQuest":
+                 switch(yourChoice){
+                    case "c1": acceptQuest(); break;
+                    case "c2": break;
                     case "c3": break;
-                    case "c4": break;   
-            }
-            break;
-            case "mayorHouse":
-             switch(yourChoice){
-                 case "c1": acceptQuest(); break;
-                 case "c2": declineQuest(); break;
-                 case "c3": break;
-                 case "c4": break;
-             }
-             break;
-             case "declineQuest":
-             switch(yourChoice){
-                case "c1": acceptQuest(); break;
-                case "c2": break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-             case "acceptQuest":
-             switch(yourChoice){
-                case "c1": continueQuest(); break;
-                case "c2": break;
-                case "c3": break;
-                case "c4": break;
+                    case "c4": break;
+                 }
+                 break;
+                 case "acceptQuest":
+                 switch(yourChoice){
+                    case "c1": continueQuest(); break;
+                    case "c2": break;
+                    case "c3": break;
+                    case "c4": break;
 
-            }
-            break;
-            case "continueQuest":
-             switch(yourChoice){
-                case "c1": continue1Quest(); break;
-                case "c2": break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-            case "continue1Quest":
-             switch(yourChoice){
-                case "c1": continue2Quest(); break;
-                case "c2": break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-            case "continue2Quest":
-             switch(yourChoice){
-                case "c1": leftQuest(); break;
-                case "c2": RightQuest(); break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-            case "leftQuest":
-             switch(yourChoice){
-                case "c1": DrinkQuest(); break;
-                case "c2": RunQuest(); break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-            case "DrinkQuest":
-             switch(yourChoice){
-                case "c1": AttackQuest(); break;
-                case "c2": RunQuest(); break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-             case "RunQuest":
-             switch(yourChoice){
-                case "c1": restartGame(); break;
-                case "c2": break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-            case "RightQuest":
-             switch(yourChoice){
-                case "c1": AttackQuest(); break;
-                case "c2": RunQuest(); break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-            case "AttackQuest":
-             switch(yourChoice){
-                case "c1": PickQuest(); break;
-                case "c2": searchQuest(); break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-             case "PickQuest":
-             switch(yourChoice){
-                case "c1": backQuest(); break;
-                case "c2": searchQuest(); break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-             case "searchQuest":
-             switch(yourChoice){
-                case "c1": equipQuest(); break;
-                case "c2": backQuest(); break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-             case "equipQuest":
-             switch(yourChoice){
-                case "c1": backQuest(); break;
-                case "c2": break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-             case "restartGame":
-             switch(yourChoice){
-                case "c1": continue2Quest(); break;
-                case "c2": break;
-                case "c3": break;
-                case "c4": break;
-             }
-             break;
-             case "backQuest":
-             switch(yourChoice){
-                case "c1": endGame(); break;
-                case "c2": break;
-                case "c3": break;
-                case "c4": break;
-             }
+                }
+                break;
+                case "continueQuest":
+                 switch(yourChoice){
+                    case "c1": continue1Quest(); break;
+                    case "c2": break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+                 break;
+                case "continue1Quest":
+                 switch(yourChoice){
+                    case "c1": continue2Quest(); break;
+                    case "c2": break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+                 break;
+                case "continue2Quest":
+                 switch(yourChoice){
+                    case "c1": leftQuest(); break;
+                    case "c2": RightQuest(); break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+                 break;
+                case "leftQuest":
+                 switch(yourChoice){
+                    case "c1": DrinkQuest(); break;
+                    case "c2": RunQuest(); break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+                 break;
+                case "DrinkQuest":
+                 switch(yourChoice){
+                    case "c1": AttackQuest(); break;
+                    case "c2": RunQuest(); break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+                 break;
+                 case "RunQuest":
+                 switch(yourChoice){
+                    case "c1": restartGame(); break;
+                    case "c2": break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+                 break;
+                case "RightQuest":
+                 switch(yourChoice){
+                    case "c1": AttackQuest(); break;
+                    case "c2": RunQuest(); break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+                 break;
+                case "AttackQuest":
+                 switch(yourChoice){
+                    case "c1": PickQuest(); break;
+                    case "c2": searchQuest(); break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+                 break;
+                 case "PickQuest":
+                 switch(yourChoice){
+                    case "c1": backQuest(); break;
+                    case "c2": searchQuest(); break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+                 break;
+                 case "searchQuest":
+                 switch(yourChoice){
+                    case "c1": equipQuest(); break;
+                    case "c2": backQuest(); break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+                 break;
+                 case "equipQuest":
+                 switch(yourChoice){
+                    case "c1": backQuest(); break;
+                    case "c2": break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+                 break;
+                 case "restartGame":
+                 switch(yourChoice){
+                    case "c1": continue2Quest(); break;
+                    case "c2": break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+                 break;
+                 case "backQuest":
+                 switch(yourChoice){
+                    case "c1": endGame(); break;
+                    case "c2": break;
+                    case "c3": break;
+                    case "c4": break;
+                 }
+
+
 
             }
 
