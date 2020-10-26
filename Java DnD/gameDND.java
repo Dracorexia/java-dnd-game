@@ -16,10 +16,12 @@ import javax.swing.JTextArea;
 import java.awt.Container;
 import java.awt.Dimension;
 
+
 //try deleting  all these extra libraries
 
 public class gameDND{
     int playerhp;
+    int monhp;
     String playerweapon,playerPosition;
 
     JFrame window;
@@ -178,6 +180,7 @@ public class gameDND{
      
      public void playerSetup(){
          playerhp =20;
+         monhp=20;
          playerweapon ="Dagger";
          weaponName.setText(playerweapon);
          HP.setText(""+playerhp);
@@ -242,6 +245,8 @@ public class gameDND{
     }
     public void continue2Quest(){
        playerPosition="continue2Quest";
+       playerhp =20;
+       monhp=20;
        mainTextArea.setText(
        "You arrive at Shademirk Bog.\nThe road diverges in front of you. \nWhat do you do?" );
        choiceButton1.setText("Go Left");
@@ -253,13 +258,15 @@ public class gameDND{
        playerPosition="leftQuest";
        mainTextArea.setText(
        "You found a healing potion. \nWhat do you do?" );
+       playerhp=playerhp+20;
        choiceButton1.setText("Drink potion and Go");
        choiceButton2.setText("Run away");
        choiceButton3.setText("");
        choiceButton4.setText("");
     }
     public void DrinkQuest(){
-       playerPosition="DrinkQuest";
+       playerPosition="fight";
+       
        mainTextArea.setText(
        "Oh no! You encountered a Goblin. \nWhat do you do?" );
        choiceButton1.setText("Attack");
@@ -276,8 +283,8 @@ public class gameDND{
        choiceButton3.setText("");
        choiceButton4.setText("");
     }
-    public void RightQuest(){
-       playerPosition="RightQuest";
+    public void RightQuest(){//ATTACKKK SEQUENCE NEEDED AFTRT THIS 
+       playerPosition="fight";
        mainTextArea.setText(
        "Oh no! You encountered a Goblin. \nWhat do you do?" );
        choiceButton1.setText("Attack");
@@ -355,7 +362,84 @@ public class gameDND{
 
     }
 
+    public void fight()
+    {
+      playerPosition="fight";
+      mainTextArea.setText("Monster hp: "+monhp+"\n\n what do you do ");
+      choiceButton1.setText("ATTACK");
+       choiceButton2.setText("Run away");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+       
+    }
 
+
+    public void playerAttack()
+    {
+       playerPosition="playerAttack";
+       
+       int playerd=0;
+
+       playerd=new java.util.Random().nextInt(6);
+
+
+       mainTextArea.setText("YOU ATTACKED THE MONSTEr and gave"+ playerd+"damage ");
+
+       monhp=monhp - playerd;
+
+       choiceButton1.setText(">");
+       choiceButton2.setText("Run away");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+
+
+    }
+    public void monsterAttack()
+    {
+       playerPosition="mon";
+
+       int mond=0;
+       mond=new java.util.Random().nextInt(20);
+       mainTextArea.setText("THE MONSTER ATTACKED YOU AND GAVE "+ mond+"  DAMAGE!");
+       
+       playerhp=playerhp-mond;
+      HP.setText(""+playerhp);
+
+      choiceButton1.setText(">");
+       choiceButton2.setText("Run away");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+
+
+    }
+
+    public void win()
+    {
+      playerPosition="DrinkQuest";
+      mainTextArea.setText(" YOU DEFEATED A MONSTERRRRRRR");
+      choiceButton1.setText(" GO back");
+       choiceButton2.setText("Run away");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+    }
+
+    public void lose()
+    {
+      
+      playerPosition="restartGame";
+      mainTextArea.setText("YOU ARE DEAD \n \n <GAME OVER>");
+
+      choiceButton1.setText(">");
+       choiceButton2.setText("Run away");
+       choiceButton3.setText("");
+       choiceButton4.setText("");
+    }
+
+
+   
+
+      
+    
      // idhar se start adding methods
      //dont forget to add playerposition to each method
      //plis watch previous videos to get full context
@@ -398,7 +482,7 @@ public class gameDND{
                  switch(yourChoice){
                      case "c1": acceptQuest(); break;
                      case "c2": declineQuest(); break;
-                     case "c3": break;
+                     case "c3": playerAttack() ;break;
                      case "c4": break;
                  }
                  break;
@@ -469,7 +553,7 @@ public class gameDND{
                  break;
                 case "RightQuest":
                  switch(yourChoice){
-                    case "c1": AttackQuest(); break;
+                    case "c1": RightQuest(); break;
                     case "c2": RunQuest(); break;
                     case "c3": break;
                     case "c4": break;
@@ -522,6 +606,57 @@ public class gameDND{
                     case "c3": break;
                     case "c4": break;
                  }
+                 break;
+                 case "fight":
+                 switch(yourChoice)
+                 {
+                    case "c1" : playerAttack(); break;
+                    case "c2" : break;
+
+                 }
+                 break;
+                 case "playerAttack" :
+                 
+                    switch(yourChoice)
+                   { 
+                      case "c1" : 
+                      if(monhp<1)
+                      {
+                         win();
+                      }
+                      else
+                      {
+                        monsterAttack();
+
+                      }
+                      break;
+
+                    }
+                    break;
+                   
+
+
+                    case "mon" :
+
+                    switch(yourChoice)
+                    {
+                       case "c1": 
+                       if(playerhp<1)
+                       {
+                          lose();
+                       }
+                       else
+                       {
+                        fight(); 
+                       }
+                       
+                    }
+                    break;
+
+                 
+
+
+                 
 
 
 
